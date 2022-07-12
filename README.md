@@ -1,24 +1,32 @@
-# README
+# アプリケーション名
+Fit Skin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション概要
+これまで自身が使用してきた商品のレビューから、似たレビューの人同士をマッチングさせることで、自身に合う新たな商品を見つけることができる。
 
-Things you may want to cover:
+# URL
 
-* Ruby version
+# テスト用アカウント
 
-* System dependencies
+# 利用方法
 
-* Configuration
+# アプリケーションを作成した背景
 
-* Database creation
+# 洗い出した要件
+[要件を定義したシート](https://docs.google.com/spreadsheets/d/1LLWfr6ZU8rBb5ePfhpQeXhkq4owPEU3uZ4ZpiHwV7m4/edit#gid=982722306)
 
-* Database initialization
+# 実装した機能についての画像やGIFおよびその説明
 
-* How to run the test suite
+# 実装予定の機能
 
-* Services (job queues, cache servers, search engines, etc.)
+# データベース設計
+![ER図](app/assets/images/ER.png "ER図")
 
-* Deployment instructions
+# 画面遷移図
+![画面遷移図](app/assets/images/view.png "画面遷移図")
+# 開発環境
+Ruby on Rails
 
-* ...
+# ローカルでの動作方法
+
+# 工夫したポイント
