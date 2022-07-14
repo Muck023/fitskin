@@ -1,3 +1,72 @@
+>後に削除
+## usersテーブル
+
+| Column             | Type    | Options                   |
+| ------------------ | ------- | ------------------------- |
+| email              | string  | null: false, unique: true |
+| encrypted_password | string  | null: false               |
+| nickname           | string  | null: false               |
+| word               |  text   |                           |
+
+### Association
+
+- has_many :tags, through: :user_tags
+- has_many :items
+- has_many :favorites
+
+
+## tags テーブル
+
+| Column | Type   | Options     |
+| ------ | ------ | ----------- |
+| name   | string | null: false |
+
+### Association
+
+- has_many :users, through: :user_tags
+
+
+## user_tags テーブル
+
+| Column | Type       | Options                       |
+| ------ | ---------- | ----------------------------- |
+| user   | references | null: false,foreign_key: true |
+| tag    | references | null: false,foreign_key: true |
+
+### Association
+
+- belongs_to :user
+- belongs_to :tag
+
+
+## items テーブル
+
+| Column           | Type       | Options                       |
+| ---------------- | ---------- | ----------------------------- |
+| category_id      |  integer   | null: false                   |
+| sales_name       |   string   | null: false                   |
+| price            |  integer   |                               |
+| evaluation_id    |  integer   | null: false                   |
+| comment_title    |   string   | null: false                   |
+| comment_detail   |    text    |                               |
+| user             | references | null: false,foreign_key: true |
+
+### Association
+
+- belongs_to :user
+
+
+## favorites テーブル
+
+| Column | Type       | Options                       |
+| ------ | ---------- | ----------------------------- |
+| user   | references | null: false,foreign_key: true |
+
+### Association
+
+- belongs_to :user
+***
+
 # アプリケーション名
 Fit Skin
 
