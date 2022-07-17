@@ -1,0 +1,13 @@
+.header{
+  width: 100vw;
+  height: 70px;
+  border-bottom: 2px solid #c0c0c0;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fitskin_logo{
+  width: 215px;
+}
