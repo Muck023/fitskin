@@ -1,0 +1,108 @@
+body{
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+}
+
+.back_main_color{
+  position: fixed;
+  background-color:lightskyblue;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+}
+
+.user{
+  position: relative;
+  z-index: 20;
+}
+
+.back_head{
+  background-color: white;
+  height: 70px;
+  width: 100vw;
+  padding: 0 20px 0 10px;
+  display: flex;
+  align-items: center;
+}
+
+.user_title{
+  color: lightskyblue;
+  font-size: 35px;
+  font-weight: bold;
+  text-align: right;
+  width: 100vw;
+  letter-spacing: 3px;
+}
+
+.back_main{
+  width: 100vw;
+  padding: 100px 0 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.user_form{
+  width: 350px;
+}
+
+.user_label{
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.mandatory{
+  color: white;
+  margin-left: 12px;
+  font-size: 12px;
+  vertical-align: 2px;
+}
+
+.input-default{
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px 0 20px;
+  width: 350px;
+  height: 30px;
+  padding: 5px 10px;
+}
+
+.input-word{
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px 0 20px;
+  width: 350px;
+  height: 85px;
+  padding: 5px 10px;
+}
+
+.actions{
+  margin-top: 50px;
+  width: 350px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.submit{
+  background-color: #FAB387;
+  border-radius: 10px;
+  width: 250px;
+  height: 40px;
+  color: white;
+  font-weight: bold;
+}
+
+.login_links{
+  margin-top: 15px;
+  color: white;
+  font-size: 12px;
+  display: flex;
+}
+
+a.a_login{
+  text-decoration: none;
+  color: white;
+  font-size: 12px;
+  padding: 0 15px;
+}

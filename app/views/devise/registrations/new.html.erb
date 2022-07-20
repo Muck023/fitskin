@@ -1,29 +1,53 @@
-<h2>Sign up</h2>
+<div class='back_main_color'></div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class='user'>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class='back_head'>
+    <%= link_to image_tag("fitskin_logo.png", class:"fitskin_logo"), "/" %>
+    <div class='user_title'>新規登録</div>
   </div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
+  <div class='back_main'>
+    <div class='user_form'>
+
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <label class="user_label">ユーザーネーム</label><span class="mandatory">必須</span><br />
+          <%= f.text_area :nickname, class:"input-default" %>
+        </div>
+
+        <div class="field">
+          <label class="user_label">メールアドレス</label><span class="mandatory">必須</span><br />
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-default" %>
+        </div>
+
+        <div class="field">
+          <label class="user_label">パスワード</label>
+          <% if @minimum_password_length %>
+            <span>(<%= @minimum_password_length %> 文字以上)</span>
+          <% end %>
+          <span class="mandatory">必須</span><br />
+          <%= f.password_field :password, autocomplete: "new-password", class:"input-default" %>
+        </div>
+
+        <div class="field">
+          <label class="user_label">パスワード</label><span>（確認用）</span><span class="mandatory">必須</span><br />
+          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input-default" %>
+        </div>
+
+        <div class="field">
+          <label class="user_label">自己紹介</label><br />
+          <%= f.text_area :word, class:"input-word" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "登 録", class:"submit" %>
+        </div>
+      <% end %>
+
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
+</div>

@@ -1,16 +1,38 @@
-<h2>Forgot your password?</h2>
+<div class='back_main_color'></div>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<div class='user'>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  <div class='back_head'>
+    <%= link_to image_tag("fitskin_logo.png", class:"fitskin_logo"), "/" %>
+    <div class='user_title'>パスワード再設定</div>
   </div>
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+  <div class='back_main'>
+    <div class='user_form'>
 
-<%= render "devise/shared/links" %>
+      <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+        <%= render "devise/shared/error_messages", resource: resource %>
+
+        <div class="field">
+          <label class="user_label">メールアドレス</label>
+          <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-default" %>
+        </div>
+
+        <div class="actions">
+          <%= f.submit "メールを送信する", class:"submit" %>
+          <div class='login_links'>
+            <%- if controller_name != 'sessions' %>
+              <%= link_to "ログイン", new_session_path(resource_name), class:"a_login" %>
+            <% end %>
+            /
+            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+              <%= link_to "新規登録", new_registration_path(resource_name), class:"a_login" %>
+            <% end %>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+
+</div>
