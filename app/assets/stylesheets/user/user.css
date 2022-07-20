@@ -4,6 +4,16 @@ body{
   font-family: 'Zen Kaku Gothic New', sans-serif;
 }
 
+.error_title{
+  font-weight: bold;
+  font-size: 20px;
+  color: #FF96B9;
+}
+
+.error_ul{
+  margin: 10px 0 50px 20px;
+}
+
 .back_main_color{
   position: fixed;
   background-color:LavenderBlush;
@@ -47,6 +57,7 @@ body{
 }
 
 .profile_form{
+  margin-top: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
