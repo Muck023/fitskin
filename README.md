@@ -13,6 +13,7 @@
 - has_many :tags, through: :user_tags
 - has_many :items
 - has_many :favorites
+- has_one_attached :profile_img
 
 
 ## tags テーブル
