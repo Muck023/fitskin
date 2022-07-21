@@ -1,2 +1,29 @@
-<li><%= link_to 'ログイン', new_user_session_path %></li>
-<li><%= link_to '新規登録', new_user_path %></li>
+<div class="toppage_back_left"></div>
+
+<div class="toppage_hero_left">
+  <img class="preview-image" src="/assets/fitskin_logo.png">
+  <br>
+  <br>
+  <p>自分の肌に合う商品を　同じ肌質の人から紹介してもらいませんか？</p>
+  <br>
+  <p>fitskinは自分が投稿した商品から　自分と同じ感想を持つ方をマッチングさせ　マッチングした方の投稿から自分に合う・合わない商品を紹介してもらおう　という考えから作られました。</p>
+  <br>
+  <br>
+  <p>敏感肌だから敏感肌用の商品を買ったけど自分の肌に合わなくてお金を無駄にしてしまった</p>
+  <p>評判の商品だから購入して使用してみたものの自分には効果がなかった</p>
+  <p>などの経験がある方に　是非使っていただきたいです</p>
+  <p></p>
+  <p></p>
+</div>
+
+<div class="toppage_back_right">
+  <div class="toppage_hero_right">
+    <div>
+      <%= link_to "新規登録", new_user_registration_path, class:"toppage_submit" %>
+    </div>
+    <div>
+      <%= link_to "ログイン", new_user_session_path, class:"toppage_submit" %>
+    </div>
+  </div>
+</div>
+
