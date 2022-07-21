@@ -1,1 +1,6 @@
-<%= render "shared/header" %>
+<% if user_signed_in? %>
+    <%= render "shared/header" %>
+    <%= current_user.nickname %>
+  <% else %>
+    <%= render "shared/toppage" %>
+<% end %>
