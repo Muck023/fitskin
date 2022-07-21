@@ -2,7 +2,7 @@ body{
   font-family: 'Open Sans', sans-serif;
   font-family: 'Roboto', sans-serif;
   font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .error_title{
@@ -82,7 +82,6 @@ body{
 
 .user_label{
   font-size: 18px;
-  font-weight: 400;
   margin-top: ;
 }
 
@@ -91,7 +90,6 @@ body{
   margin-left: 12px;
   font-size: 12px;
   vertical-align: 2px;
-  font-weight: 400;
 }
 
 .input-default{
@@ -99,7 +97,7 @@ body{
   border-radius: 10px;
   margin: 5px 0 0;
   width: 350px;
-  height: 30px;
+  height: 35px;
   padding: 5px 10px;
 }
 
@@ -133,7 +131,6 @@ body{
   margin-top: 15px;
   color: #FF96B9;
   font-size: 12px;
-  font-weight: 400;
   display: flex;
 }
 
@@ -141,6 +138,5 @@ a.a_login{
   text-decoration: none;
   color: #FF96B9;
   font-size: 12px;
-  font-weight: 400;
   padding: 0 15px;
 }
