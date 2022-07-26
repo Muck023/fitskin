@@ -3,3 +3,9 @@ ja:
     attributes:
       user:
         nickname: ユーザーネーム
+      item:
+        category: カテゴリー
+        sales: 販売
+        price: 購入価格
+        evaluation: 評価
+        comment: コメント

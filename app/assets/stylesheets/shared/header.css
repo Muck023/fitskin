@@ -1,13 +1,56 @@
 .header{
   width: 100vw;
   height: 70px;
-  border-bottom: 2px solid #c0c0c0;
-  padding: 10px;
+  padding: 10px 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+  background-color: white;
+  position: fixed;
+  z-index: 30;
 }
 
 .fitskin_logo{
   width: 215px;
+}
+
+.user_icon{
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+}
+
+.mouseover_area{
+  width: 150px;
+  height: 70px;
+  display: flex;
+  justify-content:end;
+  align-items: center;
+}
+
+.header-ul{
+  position: absolute;
+  right: 50px;
+  top: 70px;
+  background-color: white;
+  list-style: none;
+}
+
+li.header-li{
+  border-top: .5px solid #f5f5f5;
+  display: flex;
+  align-items: center;
+}
+
+a.header-link{
+  width: 150px;
+  padding: 12px 35px;
+  text-decoration: none;
+  color: black;
+}
+
+.hidden{
+  display: none;
 }

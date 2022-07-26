@@ -2,5 +2,16 @@
   <div>
     <%= link_to image_tag("fitskin_logo.png", class:"fitskin_logo"), "/" %>
   </div>
-  <div class=""></div>
+
+  <div class="mouseover_area" id="mouseover_area">
+    <div class="user_icon">
+      <img class="preview-image" src="/assets/user_hoso.svg" id="user_icon">
+    </div>
+  </div>
+
+  <ul class="header-ul hidden" id="header_list">
+      <li class="header-li" id="mypage"><%= link_to "マイページ", root_path, class:"header-link", id:"header_list1" %></li>
+      <li class="header-li" id="item"><%= link_to "新規投稿", new_item_path, method: :get, class:"header-link", id:"header_list2" %></li>
+      <li class="header-li" id="logout"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class:"header-link", id:"header_list3" %></li>
+  </ul>
 </header>
