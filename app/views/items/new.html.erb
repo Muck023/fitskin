@@ -4,38 +4,49 @@
 <div class='user'>
 
   <div class='back_main'>
-    <div class='user_form'>
+    <div class='item_form'>
 
-      <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
-        <%= render "devise/shared/error_messages", resource: resource %>
+      <%= form_with model: @item, url: items_path, local: true do |f| %>
+        <%# <%= render 'shared/error_messages', model: f.object %>
         
-        <label class="user_label">プロフィール画像</label>
+        <label class="label_style">商品画像</label>
         <div class='profile_form'>
-          <div class='profile_image'>
-            <img class="preview-image" src="/assets/user_hoso.svg", id="previews">
+          <div class='item_image'>
+            <img class="photo_icon" src="/assets/photo_icon.png", id="previews">
           </div>
           <div class="click-upload">
-            <%= f.file_field :profile_image %>
+            <%= f.file_field :item_image %>
           </div>
         </div>
 
         <div class="field">
-          <label class="user_label">カテゴリー</label><span class="mandatory">必須</span><br />
-          <%= f.text_area :nickname, class:"input-default" %>
+          <label class="label_style">カテゴリー</label><span class="mandatory">必須</span><br />
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input-default"}) %>
         </div>
 
         <div class="field">
-          <label class="user_label">販売名</label><span class="mandatory">必須</span><br />
-          <%= f.text_area :word, class:"input-default" %>
+          <label class="label_style">販売名</label><span class="mandatory">必須</span><br />
+          <%= f.text_area :sales_name, class:"input-default" %>
         </div>
 
         <div class="field">
-          <label class="user_label">購入価格</label><br />
-          <%= f.text_area :word, class:"input-default" %>
+          <label class="label_style">購入価格</label><br />
+          <%= f.text_area :price, class:"input-default", placeholder: "税込価格　　「,（カンマ）」「円」不要" %>
+        </div>
+
+        <div class="field">
+          <label class="label_style">評価</label><span class="mandatory">必須</span><br />
+          <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"input-default"}) %>
+        </div>
+
+        <div class="field">
+          <label class="label_style">コメント</label><span class="mandatory">必須</span><br />
+          <%= f.text_area :comment_title, placeholder: "ひとこと", class:"input-default" %>
+          <%= f.text_area :comment_detail, placeholder: "詳細(任意)", class:"input-word" %>
         </div>
 
         <div class="actions">
-          <%= f.submit "登　録", class:"submit" %>
+          <%= f.submit "投　稿", class:"submit" %>
         </div>
       <% end %>
 

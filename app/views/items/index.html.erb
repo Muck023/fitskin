@@ -1,6 +1,8 @@
 <% if user_signed_in? %>
     <%= render "shared/header" %>
-    <%= current_user.nickname %>
+    
+    <div class='back_share_color'></div>
+
   <% else %>
     <%= render "shared/toppage" %>
 <% end %>

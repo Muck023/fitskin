@@ -10,7 +10,7 @@
   <div class='back_main'>
     <div class='user_form'>
 
-      <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
+      <%= form_with url: root_path, local: true do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
         
         <label class="user_label">プロフィール画像</label>

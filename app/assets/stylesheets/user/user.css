@@ -1,40 +1,6 @@
-body{
-  font-family: 'Open Sans', sans-serif;
-  font-family: 'Roboto', sans-serif;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  font-weight: 400;
-}
-
-.error_title{
-  font-weight: 500;
-  font-size: 20px;
-  color: #FF96B9;
-}
-
-.error_ul{
-  margin: 10px 0 50px 20px;
-}
-
-.back_main_color{
-  position: fixed;
-  background-color:LavenderBlush;
-  height: 100vh;
-  width: 100vw;
-  z-index: 10;
-}
-
 .user{
   position: relative;
   z-index: 20;
-}
-
-.back_head{
-  background-color: white;
-  height: 70px;
-  width: 100vw;
-  padding: 0 20px 0 10px;
-  display: flex;
-  align-items: center;
 }
 
 .user_title{
@@ -44,13 +10,6 @@ body{
   text-align: right;
   width: 100vw;
   letter-spacing: 3px;
-}
-
-.back_main{
-  width: 100vw;
-  padding: 100px 0 50px;
-  display: flex;
-  justify-content: center;
 }
 
 .user_form{
@@ -74,57 +33,6 @@ body{
 
 .preview-image{
   object-fit: cover;
-}
-
-.field{
-  margin-top: 20px;
-}
-
-.user_label{
-  font-size: 18px;
-  margin-top: ;
-}
-
-.mandatory{
-  color: #FF96B9;
-  margin-left: 12px;
-  font-size: 12px;
-  vertical-align: 2px;
-}
-
-.input-default{
-  background-color: white;
-  border-radius: 10px;
-  margin: 5px 0 0;
-  width: 350px;
-  height: 35px;
-  padding: 5px 10px;
-}
-
-.input-word{
-  background-color: white;
-  border-radius: 10px;
-  margin: 5px 0 20px;
-  width: 350px;
-  height: 85px;
-  padding: 5px 10px;
-}
-
-.actions{
-  margin-top: 50px;
-  width: 350px;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.submit{
-  background-color: #96E3FF;
-  border-radius: 10px;
-  width: 250px;
-  height: 40px;
-  color: white;
-  font-weight: 500;
 }
 
 .login_links{

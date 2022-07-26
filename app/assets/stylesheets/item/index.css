@@ -1,0 +1,7 @@
+.back_share_color{
+  position: fixed;
+  background-color:#F0F4FF;
+  height: 100vh;
+  width: 100vw;
+  z-index: 10;
+}
