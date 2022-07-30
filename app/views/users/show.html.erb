@@ -1,26 +1,34 @@
 <%= render "shared/header" %>
-<div class="mypage_back">
+<div class="back_main_color">
+</div>
+<div class="hero">
+  <div class="back_main">
+    <div class="mypage_hero">
 
-  <div class="mypage_hero">
-    <div class="profile_hero">
-      <div class="profile_image">
-        <% if @user.profile_image == nil %>
-          <img class="preview-image" src="/assets/user_hoso.svg">
-         <% else %>
-          <%= image_tag @user.profile_image, class: "preview-image" %> 
-        <% end %>
+      <div class="profile_hero">
+        <div class="profile_image">
+          <% if @user.profile_image == nil %>
+            <img class="preview-image" src="/assets/user_hoso.svg">
+          <% else %>
+            <%= image_tag @user.profile_image, class: "preview-image" %> 
+          <% end %>
+        </div>
+        <div class="profile_text_hero">
+          <p class="profile_label">ユーザーネーム：<br><font color="black"><%= @user.nickname %></font></p>
+          <p class="profile_label">自己紹介：<br><font color="black"><%= @user.word %></font></p>
+        </div>
       </div>
-      <div class="profile_text_hero">
-        <p class="profile_label">ユーザーネーム：<br><font color="black"><%= @user.nickname %></font></p>
-        <p class="profile_label">自己紹介：<br><font color="black"><%= @user.word %></font></p>
+
+      <% if current_user.id == @user.id %>
+        <div class="mypage_actions"><%= link_to '編　集', edit_user_path(current_user), class: "submit" %></div>
+      <% end %>
+
+      <p class="profile_label">ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー</p>
+
+      <div class="myitems_hero">
+        <%= render partial: 'shared/itemsform', collection: @items, as: :item %>
       </div>
-    </div>
-    <div class="mypage_actions"><%= link_to '編　集', edit_user_path(current_user), class: "submit" %></div>
 
-    <p class="profile_label">ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー</p>
-    <div class="myitems_hero">
     </div>
-
   </div>
-
 <div>

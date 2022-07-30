@@ -1,15 +1,15 @@
+<div class='header'>
+  <div>
+    <%= link_to image_tag("fitskin_logo.png", class:"fitskin_logo"), "/" %>
+  </div>
+  <div class='user_title'>ログイン</div>
+</div>
 <div class='back_main_color'></div>
 
-<div class='user'>
-
-  <div class='back_head'>
-    <%= link_to image_tag("fitskin_logo.png", class:"fitskin_logo"), "/" %>
-    <div class='user_title'>ログイン</div>
-  </div>
-
+<div class='hero'>
   <div class='back_main'>
-    <div class='user_form'>
 
+    <div class='user_form'>
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <label class="label_style">メールアドレス</label>

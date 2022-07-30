@@ -1,8 +1,7 @@
-<% if user_signed_in? %>
-    <%= render "shared/header" %>
-    
-    <div class='back_share_color'></div>
+<%= render "shared/header" %>
 
-  <% else %>
-    <%= render "shared/toppage" %>
-<% end %>
+<div class='back_share_color'>
+
+  <%= render partial: 'shared/itemsform', collection: @items, as: :item %>
+
+</div>

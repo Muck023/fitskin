@@ -1,7 +1,13 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: :show
+  before_action :move_to_show, only: :edit
+
+  def index
+  end
+
   def show
     @user = User.find(params[:id])
-    # @items = current_user.items
+    @items = Item.where(user_id: params[:id])
   end
 
   def edit
@@ -16,6 +22,13 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def  move_to_show
+    @user = User.find(params[:id])
+    unless current_user.id == @user.id
+      redirect_to action: :show
+    end
+  end
 
   def user_params
     params.require(:user).permit(:email, :nickname, :word, :profile_image)

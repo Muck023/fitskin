@@ -1,0 +1,23 @@
+<div class="itemtemp_waku">
+  <div class="itemtemp_item_hero">
+    <div class="itemtemp_image">
+    </div>
+    <div class="itemtemp_item">
+      <p class="itemtemp_salesname">
+        <%= item.sales_name %>
+      </p>
+      <span class="itemtemp_evaluation">
+        <%= item.evaluation.name %>
+      </span>
+    </div>
+  </div>
+
+  <div class="itemtemp_user_hero">
+    <div class="title_balloon">
+      <p><%= item.user.nickname %></p>
+    </div>
+    <div class="itemtemp_usericon">
+      <%= image_tag item.user.profile_image, class: "user_icon" %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,12 @@
+document.addEventListener('DOMContentLoaded', function(){
+  const previewList = document.getElementById('item_previews');
+  if (!previewList) return null;
+
+  const fileItem = document.querySelector('input[type="file"][name="item[item_image]"]');
+  fileItem.addEventListener('change', function(e){
+    const file = e.target.files[0];
+    const blob = window.URL.createObjectURL(file);
+    previewList.setAttribute('src', blob);
+    previewList.setAttribute('class', 'photo_image');
+  });
+});

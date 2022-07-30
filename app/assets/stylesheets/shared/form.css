@@ -23,19 +23,14 @@ body{
   z-index: 10;
 }
 
-.back_head{
-  background-color: white;
-  height: 70px;
-  width: 100vw;
-  padding: 0 20px 0 10px;
-  display: flex;
-  align-items: center;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .2);
+.hero{
+  position: relative;
+  z-index: 20;
 }
 
 .back_main{
   width: 100vw;
-  padding: 100px 0 50px;
+  padding: 180px 0 100px;
   display: flex;
   justify-content: center;
 }
