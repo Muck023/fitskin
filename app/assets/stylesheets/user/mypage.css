@@ -1,3 +1,7 @@
+a{
+  text-decoration: none;
+}
+
 .mypage_back{
   position: fixed;
   background-color:#FFF0F5;
@@ -26,6 +30,13 @@ p.profile_label{
   font-size: 18px;
   color: #FF96B9;
   margin: 0 0 20px;
+}
+
+.profile_border{
+  font-weight: 400;
+  font-size: 18px;
+  color: #FF96B9;
+  margin: 40px 0;
 }
 
 .mypage_actions{

@@ -1,23 +1,36 @@
-<div class="itemtemp_waku">
-  <div class="itemtemp_item_hero">
-    <div class="itemtemp_image">
+<%= link_to root_path do %>
+
+  <div class="itemtemp_waku">
+
+    <div class="itemtemp_item_hero">
+      <div class="itemtemp_image">
+        <% if item.item_image.attached? %>
+          <%= image_tag item.item_image, class: "itemtemp_itemimag" %> 
+        <% else %>
+          <div class="itemtemp_kariimage">
+            <img class="photo_icon" src="/assets/photo_icon.png">
+          </div>
+        <% end %>
+      </div>
+      <div class="itemtemp_item">
+        <p class="itemtemp_salesname">
+          <%= item.sales_name %>
+        </p>
+        <span class="itemtemp_evaluation">
+          <%= item.evaluation.name %>
+        </span>
+      </div>
     </div>
-    <div class="itemtemp_item">
-      <p class="itemtemp_salesname">
-        <%= item.sales_name %>
-      </p>
-      <span class="itemtemp_evaluation">
-        <%= item.evaluation.name %>
-      </span>
+
+    <div class="itemtemp_user_hero">
+      <div class="title_balloon">
+        <p class="itemtemp_comment"><%= item.comment_title %></p>
+      </div>
+      <div class="itemtemp_usericon">
+        <%= image_tag item.user.profile_image, class: "user_icon" %>
+      </div>
     </div>
+
   </div>
 
-  <div class="itemtemp_user_hero">
-    <div class="title_balloon">
-      <p><%= item.user.nickname %></p>
-    </div>
-    <div class="itemtemp_usericon">
-      <%= image_tag item.user.profile_image, class: "user_icon" %>
-    </div>
-  </div>
-</div>
+<% end %>
