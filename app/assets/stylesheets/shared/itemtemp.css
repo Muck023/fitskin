@@ -1,0 +1,102 @@
+.itemtemp_waku{
+  width: 100%;
+  background-color: white;
+  border-radius: 12px;
+  padding: 25px;
+  margin-bottom: 50px;
+}
+
+.itemtemp_item_hero{
+  width: 100%;
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.itemtemp_image{
+  width: 200px;
+  height: 140px;
+  background-color: #dcdcdc;
+}
+
+.itemtemp_kariimage{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.itemtemp_itemimag{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.itemtemp_item{
+  margin-left: 20px;
+}
+.itemtemp_salesname{
+  width: 100%;
+  height: 65px;
+  margin: 0 0 10px;
+  font-size: 20px;
+  font-weight: 500;
+  
+}
+
+.itemtemp_evaluation{
+  background-color: #56d2ff;
+  width: auto;
+  padding: 5px;
+  color: white;
+  font-size: 12px;
+}
+
+.itemtemp_user_hero{
+  display: flex;
+}
+
+.title_balloon{
+  position: relative;
+  display: inline-block;
+  margin-right: 35px;
+  padding: 12px;
+  width: 470px;
+  color: #555;
+  border: solid 2px #d3d3d3;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.title_balloon:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  right: -17px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 21px solid #FFF;
+  z-index: 2;
+}
+
+.title_balloon:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  margin-top: -15px;
+  right: -20px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-left: 20px solid #d3d3d3;
+  z-index: 1;
+}
+
+.itemtemp_comment{
+  margin: 0;
+  color: #696969;
+}
+
+.itemtemp_usericon{
+
+}

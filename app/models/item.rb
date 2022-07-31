@@ -3,6 +3,7 @@ class Item < ApplicationRecord
   belongs_to :category
   belongs_to :evaluation
 
+  belongs_to :user
   has_one_attached :item_image
 
   validates :category_id, numericality: { other_than: 1 , message: "can't be blank"}

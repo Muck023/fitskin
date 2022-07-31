@@ -54,3 +54,10 @@ a.header-link{
 .hidden{
   display: none;
 }
+
+.header-preview-image{
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+  object-fit: cover;
+}
