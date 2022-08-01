@@ -16,10 +16,10 @@
         <label class="user_label">プロフィール画像</label>
         <div class='profile_form'>
           <div class='profile_image'>
-            <% if current_user.profile_image == nil %>
-              <%= image_tag "user_hoso.svg", class: "preview-image", id: "user_previews" %> 
-             <% else %>
+            <% if current_user.profile_image.attached? %>
               <%= image_tag current_user.profile_image, class: "preview-image", id: "user_previews" %> 
+             <% else %>
+              <%= image_tag "user_hoso.svg", class: "preview-image", id: "user_previews" %> 
             <% end %>
           </div>
           <div class="click-upload">
