@@ -26,10 +26,16 @@ Pass: 38160
 [要件を定義したシート](https://docs.google.com/spreadsheets/d/1LLWfr6ZU8rBb5ePfhpQeXhkq4owPEU3uZ4ZpiHwV7m4/edit#gid=982722306)
 
 # 実装した機能についての画像やGIFおよびその説明
+- トップページ
+[![Image from Gyazo](https://i.gyazo.com/1ecec7e468ace389eb05842e3d94bbb4.png)](https://gyazo.com/1ecec7e468ace389eb05842e3d94bbb4)
 - ユーザー管理機能
+[![Image from Gyazo](https://i.gyazo.com/ceab5c8b9c063dba281a7479bafde8cc.png)](https://gyazo.com/ceab5c8b9c063dba281a7479bafde8cc)
 - 商品投稿機能
+[![Image from Gyazo](https://i.gyazo.com/4384afe3822b420d7e61d5bcf0634f53.png)](https://gyazo.com/4384afe3822b420d7e61d5bcf0634f53)
 - マイページ機能
+[![Image from Gyazo](https://i.gyazo.com/24f95ed3dea881cfffddb8fa37c8eb58.png)](https://gyazo.com/24f95ed3dea881cfffddb8fa37c8eb58)
 - 一覧機能
+[![Image from Gyazo](https://i.gyazo.com/544754f675f981c3c78c62120bf5a65f.png)](https://gyazo.com/544754f675f981c3c78c62120bf5a65f)
 
 # 実装予定の機能
 - 投稿商品編集機能
