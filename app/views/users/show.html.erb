@@ -8,7 +8,7 @@
       <div class="profile_hero">
         <div class="profile_image">
           <% if @user.profile_image == nil %>
-            <img class="preview-image" src="/assets/user_hoso.svg">
+            <%= image_tag "user_hoso.svg", class: "preview-image" %>
           <% else %>
             <%= image_tag @user.profile_image, class: "preview-image" %> 
           <% end %>

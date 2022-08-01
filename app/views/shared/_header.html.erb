@@ -5,10 +5,10 @@
 
   <div class="mouseover_area" id="mouseover_area">
     <div class="user_icon">
-       <% if current_user.profile_image == nil %>
-          <img class="header-preview-image" src="/assets/user_hoso.svg" id="user_icon">
-         <% else %>
+       <% if current_user.profile_image.attached? %>
           <%= image_tag current_user.profile_image, class: "header-preview-image", id: "user_icon" %> 
+         <% else %>
+          <%= image_tag 'user_hoso.svg', class: "header-preview-image", id: "user_icon" %>
         <% end %>
     </div>
   </div>

@@ -8,7 +8,7 @@
           <%= image_tag item.item_image, class: "itemtemp_itemimag" %> 
         <% else %>
           <div class="itemtemp_kariimage">
-            <img class="photo_icon" src="/assets/photo_icon.png">
+            <%= image_tag "photo_icon.png", class: "photo_icon" %>
           </div>
         <% end %>
       </div>
@@ -27,7 +27,11 @@
         <p class="itemtemp_comment"><%= item.comment_title %></p>
       </div>
       <div class="itemtemp_usericon">
-        <%= image_tag item.user.profile_image, class: "user_icon" %>
+        <% if item.user.profile_image.attached? %>
+          <%= image_tag item.user.profile_image, class: "user_icon" %>
+        <% else %>
+          <%= image_tag "user_hoso.svg", class: "user_icon" %>
+        <% end %>
       </div>
     </div>
 
