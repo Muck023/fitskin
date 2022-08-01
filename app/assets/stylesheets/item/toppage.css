@@ -42,6 +42,7 @@ a.toppage_submit{
 
 .toppage_logo{
   width: 100%;
+  max-width: 389px;
   object-fit: cover;
 }
 

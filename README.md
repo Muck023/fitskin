@@ -1,73 +1,3 @@
->後に削除
-## usersテーブル
-
-| Column             | Type    | Options                   |
-| ------------------ | ------- | ------------------------- |
-| email              | string  | null: false, unique: true |
-| encrypted_password | string  | null: false               |
-| nickname           | string  | null: false               |
-| word               |  text   |                           |
-
-### Association
-
-- has_many :tags, through: :user_tags
-- has_many :items
-- has_many :favorites
-- has_one_attached :profile_img
-
-
-## tags テーブル
-
-| Column | Type   | Options     |
-| ------ | ------ | ----------- |
-| name   | string | null: false |
-
-### Association
-
-- has_many :users, through: :user_tags
-
-
-## user_tags テーブル
-
-| Column | Type       | Options                       |
-| ------ | ---------- | ----------------------------- |
-| user   | references | null: false,foreign_key: true |
-| tag    | references | null: false,foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :tag
-
-
-## items テーブル
-
-| Column           | Type       | Options                       |
-| ---------------- | ---------- | ----------------------------- |
-| category_id      |  integer   | null: false                   |
-| sales_name       |   string   | null: false                   |
-| price            |  integer   |                               |
-| evaluation_id    |  integer   | null: false                   |
-| comment_title    |   string   | null: false                   |
-| comment_detail   |    text    |                               |
-| user             | references | null: false,foreign_key: true |
-
-### Association
-
-- belongs_to :user
-
-
-## favorites テーブル
-
-| Column | Type       | Options                       |
-| ------ | ---------- | ----------------------------- |
-| user   | references | null: false,foreign_key: true |
-
-### Association
-
-- belongs_to :user
-***
-
 # アプリケーション名
 Fit Skin
 
@@ -79,15 +9,27 @@ Fit Skin
 # テスト用アカウント
 
 # 利用方法
+[1]トップページから新規登録を行い、アカウントを作成する
+（アカウント情報を編集したい場合は右上のアイコンからマイページへ遷移し、アカウント情報の下にある編集ボタンからアカウント編集ページへ移動することができる）
+[2]右上のアイコンから新規投稿を行う
 
 # アプリケーションを作成した背景
+自分自身アトピー肌で、商品が肌に合わず損した経験が何度もあります。そこで、同じ肌質の人から商品の感想をきければ、肌に合う商品に出会える可能性が上がると考え、このアプリケーションを作成することにしました。
 
 # 洗い出した要件
 [要件を定義したシート](https://docs.google.com/spreadsheets/d/1LLWfr6ZU8rBb5ePfhpQeXhkq4owPEU3uZ4ZpiHwV7m4/edit#gid=982722306)
 
 # 実装した機能についての画像やGIFおよびその説明
+- ユーザー管理機能
+- 商品投稿機能
+- マイページ機能
+- 一覧機能
 
 # 実装予定の機能
+- 投稿商品編集機能
+- 投稿商品削除機能
+- 検索機能
+- お気に入り登録機能
 
 # データベース設計
 ![ER図](app/assets/images/ER.png "ER図")
@@ -95,8 +37,12 @@ Fit Skin
 # 画面遷移図
 ![画面遷移図](app/assets/images/view.png "画面遷移図")
 # 開発環境
-Ruby on Rails
+[使用言語]
+HTML, CSS, JavaScript, Ruby on Rails
 
 # ローカルでの動作方法
 
+
 # 工夫したポイント
+フロント実装において、javascriptを利用した動きのあるビューを作成しました。
+デザインも統一しており、「使いたくなる」「使いやすい」を意識して作成しました。
