@@ -79,14 +79,15 @@
     <div class="item_show_footer">
       <%= link_to "編　集", edit_item_path, class: "item_show_submit" %>
         <span class="item_show_margin"></span>
-      <span class="item_show_submit" id="item_show_submit">削　除</span>
+      <button class="btn item_show_submit" id="item_show_submit">削　除</button>
     </div>
   </footer>
 
-  <div class="destroy_view">
+  <div class="destroy_view hidden" id="destoroy_view">
     <div class="destroy_home">
     </div>
     <div class="destroy_message">
+      <%= image_tag "919_x_h.svg", class: "xbuttom", id: "xbuttom" %>
       このページの投稿を削除しますか？
       <div class="item_show_margin"></div>
       <%= link_to "削　除", item_path, method: :delete, class: "item_show_submit" %>

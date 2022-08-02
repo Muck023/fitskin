@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+  <defs>
+    <style>
+      .a, .b {
+        fill: none;
+        stroke: #000;
+        stroke-linecap: round;
+        stroke-width: 2px;
+      }
+
+      .a {
+        stroke-miterlimit: 10;
+      }
+
+      .b {
+        stroke-linejoin: round;
+      }
+    </style>
+  </defs>
+  <title>icn_7</title>
+  <line class="a" x1="19.0909" y1="19.0982" x2="28.9091" y2="28.9164"/>
+  <line class="a" x1="19.0909" y1="28.9164" x2="28.9091" y2="19.0982"/>
+  <rect class="b" x="8" y="8.0073" width="32" height="32" rx="4"/>
+</svg>

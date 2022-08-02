@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :move_to_index
-  before_action :variable_definition, only: [:show, :edit, :update]
+  before_action :variable_definition, only: [:show, :edit, :update, :destroy]
   before_action :move_to_show, only: :edit
 
 
@@ -33,6 +33,11 @@ class ItemsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @item.destroy
+    redirect_to user_path(current_user.id)
   end
 
   private
