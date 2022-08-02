@@ -1,5 +1,9 @@
 <%= render "shared/header" %>
-<div class='back_main_color'></div>
+<% if @item.user.id == current_user.id %>
+  <div class='back_main_color'></div>
+ <% else %>
+  <div class='back_share_color'></div>
+<% end %>
 
 <div class='hero'>
   <div class='back_main'>
@@ -36,19 +40,26 @@
         </span>
       </div>
 
-      <div class="comment_field">
-        <div class="comment_field_user">
-          <div>
-            <% if @item.user.profile_image.attached? %>
-              <%= image_tag @item.user.profile_image, class: "user_icon" %>
-            <% else %>
-              <%= image_tag "user_hoso.svg", class: "user_icon" %>
-            <% end %>
+      <% if @item.user.id == current_user.id %>
+        <div class="comment_field">
+      <% else %>
+        <div class="comment_field_blue">
+      <% end %>
+
+        <%= link_to user_path(@item.user.id) do %>
+          <div class="comment_field_user">
+            <div>
+              <% if @item.user.profile_image.attached? %>
+                <%= image_tag @item.user.profile_image, class: "user_icon" %>
+              <% else %>
+                <%= image_tag "user_hoso.svg", class: "user_icon" %>
+              <% end %>
+            </div>
+            <div class="comment_field_usershow">
+              <%= @item.user.nickname %>
+            </div>
           </div>
-          <div class="comment_field_usershow">
-            <%= @item.user.nickname %>
-          </div>
-        </div>
+        <% end %>
 
         <div class="comment_field_title">
           <%= @item.comment_title %>
@@ -62,3 +73,13 @@
 
   </div>
 </div>
+
+<% if @item.user.id == current_user.id %>
+  <footer>
+    <div class="item_show_footer">
+      <%= link_to "編　集", edit_item_path, class: "item_show_submit" %>
+        <span class="item_show_margin"></span>
+      <span class="item_show_submit" id="item_show_submit">削　除</span>
+    </div>
+  </footer>
+<% end %>
