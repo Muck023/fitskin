@@ -1,37 +1,38 @@
-<%= link_to root_path do %>
+<%= link_to item_path(item.id) do %>
 
   <div class="itemtemp_waku">
 
-    <div class="itemtemp_item_hero">
-      <div class="itemtemp_image">
-        <% if item.item_image.attached? %>
-          <%= image_tag item.item_image, class: "itemtemp_itemimag" %> 
-        <% else %>
-          <div class="itemtemp_kariimage">
-            <%= image_tag "photo_icon.png", class: "photo_icon" %>
-          </div>
-        <% end %>
-      </div>
-      <div class="itemtemp_item">
-        <p class="itemtemp_salesname">
-          <%= item.sales_name %>
-        </p>
+    <div class="itemtemp_image">
+      <% if item.item_image.attached? %>
+        <%= image_tag item.item_image, class: "itemtemp_itemimag" %> 
+      <% else %>
+        <div class="itemtemp_kariimage">
+          <%= image_tag "photo_icon.png", class: "photo_icon" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="itemtemp_item">
+      <p class="itemtemp_salesname">
+        <%= item.sales_name %>
+      </p>
+      <p class="itemtemp_salesname">
         <span class="itemtemp_evaluation">
           <%= item.evaluation.name %>
         </span>
-      </div>
-    </div>
+      </p>
 
-    <div class="itemtemp_user_hero">
-      <div class="title_balloon">
-        <p class="itemtemp_comment"><%= item.comment_title %></p>
-      </div>
-      <div class="itemtemp_usericon">
-        <% if item.user.profile_image.attached? %>
-          <%= image_tag item.user.profile_image, class: "user_icon" %>
-        <% else %>
-          <%= image_tag "user_hoso.svg", class: "user_icon" %>
-        <% end %>
+      <div class="itemtemp_user_hero">
+        <div class="title_balloon">
+          <p class="itemtemp_comment"><%= item.comment_title %></p>
+        </div>
+        <div class="itemtemp_usericon">
+          <% if item.user.profile_image.attached? %>
+            <%= image_tag item.user.profile_image, class: "user_icon" %>
+          <% else %>
+            <%= image_tag "user_hoso.svg", class: "user_icon" %>
+          <% end %>
+        </div>
       </div>
     </div>
 

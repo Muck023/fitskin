@@ -1,0 +1,60 @@
+<%= render "shared/header" %>
+<div class='back_main_color'></div>
+
+<div class='hero'>
+  <div class='back_main'>
+
+    <div class="content">
+      <% if @item.item_image.attached? %>
+        <%= image_tag @item.item_image, class: "photo_image" %>
+      <% else %>
+        <%= image_tag "photo_icon.png", class: "photo_icon" %>
+      <% end %>
+    </div>
+
+    <div class='item_show_hero'>
+
+      <div class="item_show_category">
+        <%= @item.category.name %>
+      </div>
+
+      <div class="item_show_sales">
+        <%= @item.sales_name %>
+      </div>
+
+      <div class="fitem_show_price">
+        <%= @item.price.to_s(:delimited) %><font size="-2" >　円</font>
+      </div>
+
+      <div class="field">
+        <span class="itemtemp_evaluation">
+          <%= @item.evaluation.name %>
+        </span>
+      </div>
+
+      <div class="comment_field">
+        <div class="comment_field_user">
+          <div>
+            <% if @item.user.profile_image.attached? %>
+              <%= image_tag @item.user.profile_image, class: "user_icon" %>
+            <% else %>
+              <%= image_tag "user_hoso.svg", class: "user_icon" %>
+            <% end %>
+          </div>
+          <div class="comment_field_usershow">
+            <%= @item.user.nickname %>
+          </div>
+        </div>
+
+        <div class="comment_field_title">
+          <%= @item.comment_title %>
+        </div>
+        <div>
+          <%= @item.comment_detail %>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
