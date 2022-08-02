@@ -1,5 +1,8 @@
 class ItemsController < ApplicationController
   before_action :move_to_index
+  before_action :variable_definition, only: [:show, :edit, :update]
+  before_action :move_to_show, only: :edit
+
 
   def index
     @items = Item.all
@@ -19,13 +22,33 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @item.update(item_params)
+      redirect_to item_path(@item.id)
+    else
+      render :edit
+    end
   end
 
   private
   def  move_to_index
     unless user_signed_in?
       redirect_to users_path
+    end
+  end
+
+  def variable_definition
+    @item = Item.find(params[:id])
+  end
+
+  def move_to_show
+    if @item.user.id != current_user.id
+      render :show
     end
   end
 
