@@ -32,10 +32,24 @@ p.profile_label{
   margin: 0 0 20px;
 }
 
+p.profile_label_blue{
+  font-weight: 400;
+  font-size: 18px;
+  color: #56d2ff;
+  margin: 0 0 20px;
+}
+
 .profile_border{
   font-weight: 400;
   font-size: 18px;
   color: #FF96B9;
+  margin: 40px 0;
+}
+
+.profile_border_blue{
+  font-weight: 400;
+  font-size: 18px;
+  color: #56d2ff;
   margin: 40px 0;
 }
 

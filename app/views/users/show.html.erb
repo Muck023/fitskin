@@ -1,6 +1,10 @@
 <%= render "shared/header" %>
-<div class="back_main_color">
-</div>
+<% if @user.id == current_user.id %>
+  <div class='back_main_color'></div>
+ <% else %>
+  <div class='back_share_color'></div>
+<% end %>
+
 <div class="hero">
   <div class="back_main">
     <div class="mypage_hero">
@@ -14,8 +18,12 @@
           <% end %>
         </div>
         <div class="profile_text_hero">
-          <p class="profile_label">ユーザーネーム：<br><font color="black"><%= @user.nickname %></font></p>
-          <p class="profile_label">自己紹介：<br><font color="black"><%= @user.word %></font></p>
+          <% if @user.id == current_user.id %>
+            <p class="profile_label">ユーザーネーム：<br><font color="black"><%= @user.nickname %></font></p>
+            <p class="profile_label">自己紹介：<br><font color="black"><%= @user.word %></font></p>
+          <% else %>
+            <p class="profile_label_blue">ユーザーネーム：<br><font color="black"><%= @user.nickname %></font></p>
+            <p class="profile_label_blue">自己紹介：<br><font color="black"><%= @user.word %></font></p>          <% end %>
         </div>
       </div>
 
@@ -23,7 +31,11 @@
         <div class="mypage_actions"><%= link_to '編　集', edit_user_path(current_user), class: "submit" %></div>
       <% end %>
 
-      <p class="profile_border">ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー</p>
+      <% if @user.id == current_user.id %>
+        <p class="profile_border">ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー</p>
+      <% else %>
+        <p class="profile_border_blue">ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー</p>
+      <% end %>
 
       <div class="myitems_hero">
         <%= render partial: 'shared/itemsform', collection: @items, as: :item %>
