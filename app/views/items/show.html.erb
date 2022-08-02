@@ -82,4 +82,14 @@
       <span class="item_show_submit" id="item_show_submit">削　除</span>
     </div>
   </footer>
+
+  <div class="destroy_view">
+    <div class="destroy_home">
+    </div>
+    <div class="destroy_message">
+      このページの投稿を削除しますか？
+      <div class="item_show_margin"></div>
+      <%= link_to "削　除", item_path, method: :delete, class: "item_show_submit" %>
+    </div>
+  </div>
 <% end %>
