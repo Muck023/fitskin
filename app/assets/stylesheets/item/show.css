@@ -147,7 +147,16 @@ a.item_show_submit{
   border-radius: 10px;
   background-color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  padding: 10px 0 30px;
+}
+
+.xbuttom{
+  width: 35px;
+  height: 35px;
+  object-fit: cover;
+  margin: 0 0 20px 250px;
+  opacity: 70%;
 }
