@@ -1,5 +1,6 @@
 <% if model.errors.any? %>
-<div class="error_title">
+<div>
+  <div class="error_title">以下のエラーが発生したため保存されませんでした。</div>
   <ul  class="error_ul">
     <% model.errors.full_messages.each do |message| %>
     <li><%= message %></li>

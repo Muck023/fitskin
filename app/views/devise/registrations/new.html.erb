@@ -16,7 +16,7 @@
         <label class="user_label">プロフィール画像</label>
         <div class='profile_form'>
           <div class='profile_image'>
-            <img class="preview-image" src="/assets/user_hoso.svg", id="devise_previews">
+            <%= image_tag "user_hoso.svg", class: "preview-image", id: "devise_previews" %>
           </div>
           <div class="click-upload">
             <%= f.file_field :profile_image %>

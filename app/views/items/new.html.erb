@@ -7,7 +7,7 @@
     <div class='item_form'>
 
       <%= form_with model: @item, url: items_path, local: true do |f| %>
-        <%# <%= render 'shared/error_messages', model: f.object %>
+        <%= render 'shared/error_messages', model: f.object %>
         
         <label class="label_style">商品画像</label>
         <div class='profile_form'>
@@ -31,7 +31,7 @@
 
         <div class="field">
           <label class="label_style">購入価格</label><br />
-          <%= f.text_area :price, class:"input-default", placeholder: "税込価格　　「,（カンマ）」「円」不要" %>
+          <%= f.number_field :price, class:"input-default", placeholder: "税込価格　　「,（カンマ）」「円」不要" %>
         </div>
 
         <div class="field">

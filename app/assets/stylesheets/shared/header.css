@@ -20,6 +20,7 @@
   height: 50px;
   border-radius: 25px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, .2);
+  background-color: white;
 }
 
 .mouseover_area{

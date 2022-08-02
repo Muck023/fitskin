@@ -23,7 +23,11 @@
       </div>
 
       <div class="fitem_show_price">
-        <%= @item.price.to_s(:delimited) %><font size="-2" >　円</font>
+        <% if @item.price != nil %>
+          <%= @item.price.to_s(:delimited) %><font size="-2" >　円</font>
+        <% else %>
+          ーーー<font size="-2" >　円</font>
+        <% end %>
       </div>
 
       <div class="field">
@@ -49,7 +53,7 @@
         <div class="comment_field_title">
           <%= @item.comment_title %>
         </div>
-        <div>
+        <div class="comment_field_detail">
           <%= @item.comment_detail %>
         </div>
       </div>

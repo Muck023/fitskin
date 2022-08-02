@@ -11,7 +11,7 @@
 
     <div class='user_form'>
       <%= form_with model: current_user, local: true do |f|%>
-        <%# <%= render "shared/error_messages", resource: resource %>
+        <%= render "shared/error_messages", resource: resource %>
         
         <label class="user_label">プロフィール画像</label>
         <div class='profile_form'>
