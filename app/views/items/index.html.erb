@@ -5,8 +5,41 @@
 
 <div class="hero">
   <div class="back_main">
-    <div class="mypage_hero">
-      <%= render partial: 'shared/itemsform', collection: @items, as: :item %>
+    <div class="index_hero">
+      <%= search_form_for @q, url: root_path, html: {id: "detailed-search-form"} do |f| %>
+        <div class="search-form">
+          <%= f.label :sales_name, '商品名' %>
+          <br>
+          <%= f.text_field :sales_name, placeholder: '商品名', class: "search_field" %>
+        </div>
+        <div class="search-form">
+          <%= f.label :user_nickname_cont, '出品者名' %>
+          <br>
+          <%= f.text_field :user_nickname_cont, placeholder: '出品者名', class: "search_field" %>
+        </div>
+        <div class="search-form">
+          <%= f.label :category_id_in, 'カテゴリ' %>
+          <div class="dangumi">
+            <%= f.collection_check_boxes(:category_id_in, Category.all, :id, :name, {include_blank: "---"}) do |b| %>
+              <%= b.check_box %>
+              <%= b.label { b.text } %><br />
+            <% end %>
+          </div>
+        </div>
+        <div class="search-form">
+          <%= f.label :price_gteq, '価格'%>
+          <br>
+          <div class="search_form">
+          <%= f.number_field :price_gteq, class: "search_field" %> 円以上
+          <p class="price_margin"></p>
+          <%= f.number_field :price_lteq, class: "search_field" %> 円以下
+          </div>
+        </div>
+        <%= f.submit '検　索', class: "search_submit" %>
+      <% end %>
+      <div class="scroll">
+        <%= render partial: 'shared/itemsform', collection: @items, as: :item %>
+      </div>
     </div>
   </div>
 <div>

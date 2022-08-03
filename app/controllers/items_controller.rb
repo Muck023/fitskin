@@ -5,7 +5,9 @@ class ItemsController < ApplicationController
 
 
   def index
-    @items = Item.all
+    @other = Item.where.not(user_id: current_user.id).order("created_at DESC")
+    @q = @other.ransack(params[:q])
+    @items = @q.result
   end
 
   def new

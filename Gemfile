@@ -57,5 +57,6 @@ gem 'devise'
 gem 'rails-i18n'
 gem 'active_hash'
 gem 'pry-rails'
+gem 'ransack'
 
 gem 'rails_12factor', group: :production
