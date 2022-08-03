@@ -5,3 +5,46 @@
   width: 100vw;
   z-index: 10;
 }
+
+.index_hero{
+  display: flex;
+}
+
+.item_search{
+  width: 280px;
+  padding-right: 40px;
+  border-right: 2px solid #56d2ff;
+}
+
+.scroll{
+  overflow: auto;
+  padding: 0 40px;
+  height: 500px;
+}
+
+.search-form{
+  margin-bottom: 10px;
+}
+
+.search_field{
+  background-color: white;
+  border-radius: 5px;
+  border: 1px double #56d2ff;
+  padding: 2px 5px;
+  width: 235px;
+}
+
+p.price_margin{
+  height: 5px;
+  width: 5px;
+  margin: 0;
+}
+
+.search_submit{
+  width: 235px;
+  background-color: #56d2ff;
+  color: white;
+  border-radius: 5px;
+  padding: 2px 5px;
+  margin-top: 20px;
+}

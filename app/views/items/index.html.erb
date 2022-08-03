@@ -5,34 +5,37 @@
 
 <div class="hero">
   <div class="back_main">
-    <div class="mypage_hero">
+    <div class="index_hero">
       <%= search_form_for @q, url: root_path, html: {id: "detailed-search-form"} do |f| %>
-        <div class="search-field">
+        <div class="search-form">
           <%= f.label :sales_name, '商品名' %>
           <br>
-          <%= f.text_field :sales_name, placeholder: '商品名' %>
+          <%= f.text_field :sales_name, placeholder: '商品名', class: "search_field" %>
         </div>
-        <div class="search-field">
+        <div class="search-form">
           <%= f.label :user_nickname_cont, '出品者名' %>
           <br>
-          <%= f.text_field :user_nickname_cont, placeholder: '出品者名' %>
+          <%= f.text_field :user_nickname_cont, placeholder: '出品者名', class: "search_field" %>
         </div>
-        <div class="search-field">
+        <div class="search-form">
           <%= f.label :category_id_in, 'カテゴリ' %>
           <br>
           <%= f.collection_check_boxes(:category_id_in, Category.all, :id, :name, {include_blank: "---"}) %>
         </div>
-        <div class="search-field">
+        <div class="search-form">
           <%= f.label :price_gteq, '価格'%>
           <br>
-          <%= f.number_field :price_gteq %> 円以上
-          <br>
-          <%= f.number_field :price_lteq %> 円以下
+          <div class="search_form">
+          <%= f.number_field :price_gteq, class: "search_field" %> 円以上
+          <p class="price_margin"></p>
+          <%= f.number_field :price_lteq, class: "search_field" %> 円以下
+          </div>
         </div>
-        <%= f.submit '検索' %>
+        <%= f.submit '検索', class: "search_submit" %>
       <% end %>
-
-      <%= render partial: 'shared/itemsform', collection: @items, as: :item %>
+      <div class="scroll">
+        <%= render partial: 'shared/itemsform', collection: @items, as: :item %>
+      </div>
     </div>
   </div>
 <div>
