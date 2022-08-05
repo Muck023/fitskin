@@ -8,5 +8,5 @@ class Usage < ActiveHash::Base
     { id: 6, name: 'アトピー肌' }
   ]
  include ActiveHash::Associations
-   has_many :items
+   has_many :users
 end

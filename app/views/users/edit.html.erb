@@ -11,7 +11,7 @@
 
     <div class='user_form'>
       <%= form_with model: current_user, local: true do |f|%>
-        <%= render "shared/error_messages", resource: resource %>
+        <%= render "shared/error_messages", model: f.object %>
         
         <label class="user_label">プロフィール画像</label>
         <div class='profile_form'>
@@ -35,6 +35,11 @@
         <div class="field">
           <label class="user_label">メールアドレス</label><span class="mandatory">必須</span><br />
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-default" %>
+        </div>
+
+        <div class="field">
+          <label class="user_label">肌質</label><span class="mandatory">必須</span><br />
+          <%= f.collection_select(:usage_id, Usage.all, :id, :name, {include_blank: "---"}, {class:"input-default"}) %>
         </div>
 
         <div class="field">
