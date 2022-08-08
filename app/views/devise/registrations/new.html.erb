@@ -33,19 +33,23 @@
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-default" %>
         </div>
 
-        <div class="field">
-          <label class="user_label">パスワード</label>
-          <% if @minimum_password_length %>
-            <span>(<%= @minimum_password_length %> 文字以上)</span>
-          <% end %>
-          <span class="mandatory">必須</span><br />
-          <%= f.password_field :password, autocomplete: "new-password", class:"input-default" %>
-        </div>
+        <%if @sns_id.present? %>
+          <%= hidden_field_tag :sns_auth, true %>
+        <% else %>
+          <div class="field">
+            <label class="user_label">パスワード</label>
+            <% if @minimum_password_length %>
+              <span>(<%= @minimum_password_length %> 文字以上)</span>
+            <% end %>
+            <span class="mandatory">必須</span><br />
+            <%= f.password_field :password, autocomplete: "new-password", class:"input-default" %>
+          </div>
 
-        <div class="field">
-          <label class="user_label">パスワード</label><span>（確認用）</span><span class="mandatory">必須</span><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input-default" %>
-        </div>
+          <div class="field">
+            <label class="user_label">パスワード</label><span>（確認用）</span><span class="mandatory">必須</span><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input-default" %>
+          </div>
+        <% end %>
 
         <div class="field">
           <label class="user_label">肌質</label><span class="mandatory">必須</span><br />

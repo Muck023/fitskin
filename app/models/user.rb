@@ -8,7 +8,7 @@ class User < ApplicationRecord
   validates :nickname, presence: true
   
   devise :database_authenticatable, :registerable,
-  :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: :google_oauth2
+  :recoverable, :rememberable, :validatable, :omniauthable, omniauth_providers: [:google_oauth2]
 
   validates :usage_id, numericality: { only_integer: true, message: "を選択してください" }
 
@@ -16,5 +16,16 @@ class User < ApplicationRecord
   has_many :items
   has_one_attached :profile_image
 
-
+  def self.from_omniauth(auth)
+    sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
+    user = User.where(email: auth.info.email).first_or_initialize(
+      nickname: auth.info.name,
+        email: auth.info.email
+    )
+    if user.persisted?
+      sns.user = user
+      sns.save
+    end
+    { user: user, sns: sns }
+  end
 end
