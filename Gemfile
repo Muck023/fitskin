@@ -58,6 +58,9 @@ gem 'rails-i18n'
 gem 'active_hash'
 gem 'pry-rails'
 gem 'ransack'
+gem 'rspec-rails'
+gem 'factory_bot_rails'
+gem 'faker'
 
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"
