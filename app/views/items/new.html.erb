@@ -21,7 +21,7 @@
 
         <div class="field">
           <label class="label_style">カテゴリー</label><span class="mandatory">必須</span><br />
-          <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"input-default"}) %>
+          <%= f.collection_select(:category_id, Category.all, :id, :name, {include_blank: "---"}, {class:"input-default"}) %>
         </div>
 
         <div class="field">
@@ -36,7 +36,7 @@
 
         <div class="field">
           <label class="label_style">評価</label><span class="mandatory">必須</span><br />
-          <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {}, {class:"input-default"}) %>
+          <%= f.collection_select(:evaluation_id, Evaluation.all, :id, :name, {include_blank: "---"}, {class:"input-default"}) %>
         </div>
 
         <div class="field">

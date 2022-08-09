@@ -3,9 +3,10 @@ ja:
     attributes:
       user:
         nickname: ユーザーネーム
+        usage_id: 肌質
       item:
-        category: カテゴリー
+        category_id: カテゴリー
         sales: 販売
         price: 購入価格
-        evaluation: 評価
+        evaluation_id: 評価
         comment: コメント

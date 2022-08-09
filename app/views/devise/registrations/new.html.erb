@@ -10,6 +10,13 @@
   <div class='back_main'>
 
     <div class='user_form'>
+
+      <%unless @sns_id.present? %>
+        <%= link_to "Gmailで登録", user_google_oauth2_omniauth_authorize_path, method: :post, class: "google_buttom"%>
+        <center class="google_other">ー　または　ー</center>
+        <p class="other_title">■他メールアドレスで登録</p>
+      <% end %>
+      
       <%= form_with model: @user, url: user_registration_path, local: true do |f| %>
         <%= render "devise/shared/error_messages", resource: resource %>
         
@@ -33,18 +40,27 @@
           <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"input-default" %>
         </div>
 
-        <div class="field">
-          <label class="user_label">パスワード</label>
-          <% if @minimum_password_length %>
-            <span>(<%= @minimum_password_length %> 文字以上)</span>
-          <% end %>
-          <span class="mandatory">必須</span><br />
-          <%= f.password_field :password, autocomplete: "new-password", class:"input-default" %>
-        </div>
+        <%if @sns_id.present? %>
+          <%= hidden_field_tag :sns_auth, true %>
+        <% else %>
+          <div class="field">
+            <label class="user_label">パスワード</label>
+            <% if @minimum_password_length %>
+              <span>(<%= @minimum_password_length %> 文字以上)</span>
+            <% end %>
+            <span class="mandatory">必須</span><br />
+            <%= f.password_field :password, autocomplete: "new-password", class:"input-default" %>
+          </div>
+
+          <div class="field">
+            <label class="user_label">パスワード</label><span>（確認用）</span><span class="mandatory">必須</span><br />
+            <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input-default" %>
+          </div>
+        <% end %>
 
         <div class="field">
-          <label class="user_label">パスワード</label><span>（確認用）</span><span class="mandatory">必須</span><br />
-          <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"input-default" %>
+          <label class="user_label">肌質</label><span class="mandatory">必須</span><br />
+          <%= f.collection_select(:usage_id, Usage.all, :id, :name, {include_blank: "---"}, {class:"input-default"}) %>
         </div>
 
         <div class="field">

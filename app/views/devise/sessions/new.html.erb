@@ -10,6 +10,10 @@
   <div class='back_main'>
 
     <div class='user_form'>
+
+          <%= link_to 'Googleでログイン', user_google_oauth2_omniauth_authorize_path, method: :post, class: "google_buttom"%>
+          <center class="google_other">ー　または　ー</center>
+
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <label class="label_style">メールアドレス</label>
@@ -31,13 +35,9 @@
         <div class="actions">
           <%= f.submit "ログイン", class:"submit" %>
           <div class='login_links'>
-            <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-              <%= link_to "新規登録", new_registration_path(resource_name), class:"a_login" %>
-            <% end %>
-          /
-            <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
-              <%= link_to "パスワードを忘れた方", new_password_path(resource_name), class:"a_login" %>
-            <% end %>
+            <%= link_to "新規登録", new_registration_path(resource_name), class:"a_login" %>
+            /
+            <%= link_to "パスワードを忘れた方", new_password_path(resource_name), class:"a_login" %>
           </div>
         </div>
       <% end %>

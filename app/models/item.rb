@@ -6,8 +6,8 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :item_image
 
-  validates :category_id, numericality: { other_than: 1 , message: "can't be blank"}
+  validates :category_id, numericality: { only_integer: true, message: "を選択してください" }
   validates :sales_name, presence: true
-  validates :evaluation_id, numericality: { other_than: 1 , message: "can't be blank"}
+  validates :evaluation_id, numericality: { only_integer: true, message: "を選択してください" }
   validates :comment_title, presence: true
 end

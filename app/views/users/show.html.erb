@@ -9,6 +9,11 @@
   <div class="back_main">
     <div class="mypage_hero">
 
+      <% if @user.id == current_user.id %>
+        <p class="mypage_title">プロフィール</p>
+       <% else %>
+        <p class="mypage_title_blue">プロフィール</p>
+      <% end %>
       <div class="profile_hero">
         <div class="profile_image">
           <% if @user.profile_image.attached? %>
@@ -20,10 +25,13 @@
         <div class="profile_text_hero">
           <% if @user.id == current_user.id %>
             <p class="profile_label">ユーザーネーム：<br><font color="black"><%= @user.nickname %></font></p>
+            <p class="profile_label">肌質：<br><font color="black"><%= @user.usage.name %></font></p>
             <p class="profile_label">自己紹介：<br><font color="black"><%= @user.word %></font></p>
           <% else %>
             <p class="profile_label_blue">ユーザーネーム：<br><font color="black"><%= @user.nickname %></font></p>
-            <p class="profile_label_blue">自己紹介：<br><font color="black"><%= @user.word %></font></p>          <% end %>
+            <p class="profile_label_blue">肌質：<br><font color="black"><%= @user.usage.name %></font></p>
+            <p class="profile_label_blue">自己紹介：<br><font color="black"><%= @user.word %></font></p>
+          <% end %>
         </div>
       </div>
 
@@ -33,8 +41,10 @@
 
       <% if @user.id == current_user.id %>
         <p class="profile_border">ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー</p>
+        <p class="mypage_title"><%= @user.nickname %><font size="5" >さん</font>の投稿一覧</p>
       <% else %>
         <p class="profile_border_blue">ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー　ー</p>
+        <p class="mypage_title_blue"><%= @user.nickname %><font size="5" >さん</font>の投稿一覧</p>
       <% end %>
 
       <div class="myitems_hero">
