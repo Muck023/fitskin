@@ -1,0 +1,19 @@
+<%= render "shared/header" %>
+
+<div class='back_share_color'>
+</div>
+
+<div class="hero">
+  <div class="back_main">
+    <div class="index_hero">
+
+
+      <div class="scroll">
+        <% @items.each do |items| %>
+          <%= render partial: 'shared/itemsform', collection: items, as: :item %>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+<div>
