@@ -1,0 +1,31 @@
+.search_submit{
+  width: 235px;
+  background-color: #56d2ff;
+  color: white;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+a.search_submit{
+  width: 235px;
+  background-color: #56d2ff;
+  color: white;
+  border-radius: 5px;
+  padding: 2px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.serch_other{
+  width: 235px;
+  margin: 15px 0;
+  color: #555;
+}
+
+p.search_title{
+  color: #56d2ff;
+  font-size: 24px;
+  font-weight: 500;
+  margin: 0 0 30px;
+}
