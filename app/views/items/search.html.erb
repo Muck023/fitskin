@@ -5,15 +5,15 @@
 
 <div class="hero">
   <div class="back_main">
-    <div class="index_hero">
-
-
-      <div class="scroll">
+    <div class="mypage_hero">
+      <% if @items.empty? %>
+        <p class="search_title">あなたの投稿と評価にマッチングした投稿はありません</p>
+      <% else %>
+        <p class="search_title">あなたの投稿と評価にマッチングしました！</p>
         <% @items.each do |items| %>
           <%= render partial: 'shared/itemsform', collection: items, as: :item %>
         <% end %>
-      </div>
-
+      <% end %>
     </div>
   </div>
 <div>
