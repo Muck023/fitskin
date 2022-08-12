@@ -1,0 +1,33 @@
+.follow_min{
+  width: 100%;
+  padding-left: 15px;
+  font-size: 15px;
+}
+
+a.unfollow_submit{
+  background-color:white;
+  border-radius: 10px;
+  border: 2px solid #56d2ff;
+  width: 120px;
+  height: 30px;
+  color: #56d2ff;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+a.follow_submit{
+  background-color:#FF96B9;
+  padding-top: 2px;
+  border-radius: 10px;
+  width: 120px;
+  height: 30px;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}

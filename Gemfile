@@ -61,6 +61,7 @@ gem 'ransack'
 gem 'rspec-rails'
 gem 'factory_bot_rails'
 gem 'faker'
+gem 'acts_as_follower', github: "tcocca/acts_as_follower"
 
 gem 'omniauth-google-oauth2'
 gem "omniauth-rails_csrf_protection"

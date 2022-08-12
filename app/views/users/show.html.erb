@@ -15,13 +15,25 @@
         <p class="mypage_title_blue">プロフィール</p>
       <% end %>
       <div class="profile_hero">
-        <div class="profile_image">
-          <% if @user.profile_image.attached? %>
-            <%= image_tag @user.profile_image, class: "preview-image" %> 
-          <% else %>
-            <%= image_tag "user_hoso.svg", class: "preview-image" %>
+        <div>
+          <div class="profile_image">
+            <% if @user.profile_image.attached? %>
+              <%= image_tag @user.profile_image, class: "preview-image" %> 
+            <% else %>
+              <%= image_tag "user_hoso.svg", class: "preview-image" %>
+            <% end %>
+          </div>
+          <div class="follow_min">
+            <%= @user.follow_count %>
+            <%= link_to "フォロー", {controller: :users,action: :follow_list,user_id: @user.id}, method: :get, class: "itemtemp_comment" %><br>
+            <%= @user.followers_count %>
+            <%= link_to "フォロワー", {controller: :users,action: :follower_list,user_id: @user.id}, method: :get, class: "itemtemp_comment" %>
+          </div>
+          <% if current_user.id != @user.id %>
+            <center><%= render 'follow_form' %></center>
           <% end %>
         </div>
+
         <div class="profile_text_hero">
           <% if @user.id == current_user.id %>
             <p class="profile_label">ユーザーネーム：<br><font color="black"><%= @user.nickname %></font></p>
