@@ -22,24 +22,26 @@ class UsersController < ApplicationController
   end
 
   def follow
+    @follow = User.find(params[:user_id])
+    current_user.follow(@follow)
+    redirect_to user_path(@follow)
+  end
+
+  def unfollow
+    @unfollow = User.find(params[:user_id])
+    current_user.stop_following(@unfollow)
+    redirect_to user_path(@unfollow)
+  end
+
+  def follow_list
     @user = User.find(params[:user_id])
-    current_user.follow(@user)
-    redirect_to user_path(@user)
-end
+    @follows = @user.all_following
+  end
 
-def unfollow
+  def follower_list
     @user = User.find(params[:user_id])
-    current_user.stop_following(@user)
-    redirect_to user_path(@user)
-end
-
-def follow_list
-  @user = User.find(params[:user_id])
-end
-
-def follower_list
-  @user = User.find(params[:user_id])
-end
+    @followers = @user.followers
+  end
 
   private
 

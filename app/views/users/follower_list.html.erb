@@ -1,4 +1,46 @@
-<% @user.followers.each do |user| %>
-  <%= user.name %>
-  <%= link_to '詳細', user_path(user) %>
-<% end %>
+<%= render "shared/header" %>
+
+<div class='back_share_color'>
+</div>
+
+<div class="hero">
+  <div class="back_main">
+    <div class="mypage_hero">
+      <% if @followers.empty? %>
+        <p class="search_title"><%= @user.nickname %>は現在フォローされていません</p>
+      <% else %>
+        <p class="search_title"><%= @user.nickname %>をフォローしています</p>
+        <% @followers.each do |follower| %>
+        
+          <%= link_to user_path(follower.id) do %>
+
+            <div class="itemtemp_waku">
+
+              <div class="itemtemp_usericon">
+                <% if follower.profile_image.attached? %>
+                  <%= image_tag follower.profile_image, class: "user_icon" %>
+                <% else %>
+                  <%= image_tag "user_hoso.svg", class: "user_icon" %>
+                <% end %>
+              </div>
+
+              <div class="itemtemp_item">
+                <p class="itemtemp_salesname">
+                  <%= follower.nickname %>
+                </p>
+                <p class="itemtemp_salesname">
+                  <span class="itemtemp_evaluation">
+                    <%= follower.usage.name %>
+                  </span>
+                </p>
+              </div>
+
+            </div>
+
+          <% end %>
+        <% end %>
+
+      <% end %>
+    </div>
+  </div>
+<div>
