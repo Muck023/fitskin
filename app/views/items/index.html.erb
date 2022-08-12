@@ -6,24 +6,17 @@
 <div class="hero">
   <div class="back_main">
     <div class="index_hero">
-
       <%= search_form_for @q, url: root_path, html: {id: "detailed-search-form"} do |f| %>
-
-        <%= link_to "マッチング検索", search_item_path(current_user.id), class: "search_submit" %>
-        <center class="serch_other">ー　または　ー</center>
-
         <div class="search-form">
           <%= f.label :sales_name, '商品名' %>
           <br>
-          <%= f.search_field :sales_name_cont, placeholder: '商品名', class: "search_field" %>
+          <%= f.text_field :sales_name, placeholder: '商品名', class: "search_field" %>
         </div>
-
         <div class="search-form">
           <%= f.label :user_nickname_cont, '出品者名' %>
           <br>
-          <%= f.search_field :user_nickname_cont, placeholder: '出品者名', class: "search_field" %>
+          <%= f.text_field :user_nickname_cont, placeholder: '出品者名', class: "search_field" %>
         </div>
-
         <div class="search-form">
           <%= f.label :category_id_in, 'カテゴリ' %>
           <div class="dangumi">
@@ -33,7 +26,6 @@
             <% end %>
           </div>
         </div>
-
         <div class="search-form">
           <%= f.label :price_gteq, '価格'%>
           <br>
@@ -43,14 +35,11 @@
           <%= f.number_field :price_lteq, class: "search_field" %> 円以下
           </div>
         </div>
-
-        <%= f.submit 'キーワード検索', class: "search_submit" %>
+        <%= f.submit '検　索', class: "search_submit" %>
       <% end %>
-
       <div class="scroll">
         <%= render partial: 'shared/itemsform', collection: @items, as: :item %>
       </div>
-
     </div>
   </div>
 <div>

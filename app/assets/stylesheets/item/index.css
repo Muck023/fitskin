@@ -43,3 +43,12 @@ p.price_margin{
   width: 5px;
   margin: 0;
 }
+
+.search_submit{
+  width: 235px;
+  background-color: #56d2ff;
+  color: white;
+  border-radius: 5px;
+  padding: 2px 5px;
+  margin-top: 20px;
+}

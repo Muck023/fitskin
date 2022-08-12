@@ -10,10 +10,6 @@ class ItemsController < ApplicationController
     @items = @q.result
   end
 
-  def search
-    @items = Item.search(params[:id])
-  end
-
   def new
     @item = Item.new
   end

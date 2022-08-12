@@ -4,10 +4,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "items#index"
-  resources :items do
-    member do
-      get 'search'
-    end
-  end
+  resources :items
   resources :users
 end
