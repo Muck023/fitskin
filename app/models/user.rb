@@ -15,6 +15,8 @@ class User < ApplicationRecord
   has_many :sns_credentials
   has_many :items
   has_one_attached :profile_image
+  acts_as_followable
+  acts_as_follower
 
   def self.from_omniauth(auth)
     sns = SnsCredential.where(provider: auth.provider, uid: auth.uid).first_or_create
