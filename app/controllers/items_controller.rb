@@ -1,7 +1,7 @@
 class ItemsController < ApplicationController
   before_action :move_to_index
   before_action :variable_definition, only: [:show, :edit, :update, :destroy]
-  before_action :move_to_show, only: :edit
+  before_action :move_to_show, only: [:edit, :destroy]
 
 
   def index
@@ -21,7 +21,7 @@ class ItemsController < ApplicationController
   def create
     @item = Item.create(item_params)
     if @item.save
-      redirect_to root_path
+      redirect_to user_path(current_user.id)
      else
       render :new
     end
